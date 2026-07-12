@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-hospital-dark: #0B1120;
+  --color-electric-cyan: #00E5FF;
+  --color-soft-blue: #3B82F6;
+  --color-critical-red: #EF4444;
+  --color-success-green: #10B981;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-200 antialiased m-0 p-0;
+    background-image: radial-gradient(circle at top, #1e293b 0%, #020617 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-slate-900/40 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] rounded-[32px] overflow-hidden;
+  }
+  
+  .glass-card-hover {
+    @apply hover:bg-slate-800/50 hover:border-white/20 transition-all duration-300;
+  }
+
+  .neon-text-cyan {
+    text-shadow: 0 0 10px var(--color-electric-cyan), 0 0 20px var(--color-electric-cyan);
+  }
+  
+  .neon-text-red {
+    text-shadow: 0 0 10px var(--color-critical-red), 0 0 20px var(--color-critical-red);
+  }
+}
